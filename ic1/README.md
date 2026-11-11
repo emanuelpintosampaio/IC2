@@ -79,6 +79,6 @@ python GRAFICO/graph_metd_euler.py                          # menu interativo co
   | 500 µm | 7,926e-12 ✓ | 7,927e-12 ✓ | 8,004e-12 ✓ | 8,006e-12 (8,001e-12) |
 
   No arquivo o passo está em Δt = 10⁻² s (`dts_test`); para 500 µm, cujo τ_f é de 0,72 s, esse passo é grosso e os valores se afastam um pouco mais.
-- `IC1_GRAFICOS.py` faz `from rk4 import raio_simplificado, temperatura_simplificada, metodo_rk4`, mas o `rk4.py` não existe mais (só sobrou o bytecode compilado), então ele não roda como está.
+- `IC1_GRAFICOS.py` faz `from rk4 import metodo_rk4`, mas o `rk4.py` não existe mais (só sobrou o bytecode compilado), então ele não roda como está.
 - `graph_req.py` usa `text.usetex` e precisa de LaTeX instalado.
 - Os scripts importam `from GRAFICO.DGH import ...`; a pasta `GRAFICO/DGH/` é uma cópia de `DGH/` para que eles funcionem sem alteração.
