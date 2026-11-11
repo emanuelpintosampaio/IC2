@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+
+# Saídas gravadas pelos scripts na pasta de onde são executados
+/ic1/codigos/*.png
+/ic2/codigos/*.png
+/ic2/codigos/*.pdf
+/ic2/codigos/resultados_mpi.txt
