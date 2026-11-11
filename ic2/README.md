@@ -28,6 +28,10 @@ Rodando os scripts `_500` desta pasta, as massas finais de CO₂ são idênticas
 | E2 | 7.953202982460029e-12 |
 | E3 | 7.95314107953467e-12 |
 
+### Parâmetros: a referência é o TCC
+
+Os scripts de `codigos/` estão como foram usados no relatório da IC2, com T_ar = 16,85 °C, T_mar = 285 K, T_gota = 11,85 °C, umidade relativa f = 0,8 e Φ_s calculado com `M_NaCl`. **A versão de referência, com os parâmetros corretos (T_ar = 18 °C, T_mar = 293,15 K, T_gota = 19,8 °C, f = 0,9 e Φ_s com `M_H2O`), é a do TCC**, que está em [`referencia_tcc/`](referencia_tcc/) e no repositório [emanuelpintosampaio/TCC](https://github.com/emanuelpintosampaio/TCC). O algoritmo é o mesmo nas duas versões.
+
 ## Pastas
 
 - `relatorio/`: relatório final em PDF.
@@ -38,6 +42,7 @@ Rodando os scripts `_500` desta pasta, as massas finais de CO₂ são idênticas
   - `econtrolprova.png`: instabilidade numérica (overflow) do sistema completo com passo grande.
   - `rk3.pdf`: representação geométrica do método RK3.
 - `codigos/`: os scripts da tabela acima e os módulos físicos (`NEWTON/`, `T_EQ/`, `TAU_R/`, `TAU_T/`, `DGH/`, `CONSTANTES`). Os gráficos são gravados como `grafico_*.png` na pasta de onde o script é executado.
+- `referencia_tcc/`: **versão de referência, com os parâmetros corretos**. São os códigos do TCC equivalentes a ECONTROL, E1, E2 e E3 (SCONTROL, S1, S3 e S4), com os mesmos módulos do TCC. Detalhes em [referencia_tcc/README.md](referencia_tcc/README.md).
 - `codigos/desenvolvimento/`: versões feitas durante o desenvolvimento.
   - `IC2_RK3_all.py`, `E1_MPI.py`, `IC2_simplificacao_RK3_passo_adaptativo_PID.py`: versões editadas depois do relatório (ver Observações).
   - `subsistemas/`: só r, só T, ou r e T, com Euler e RK3, em passo fixo, subpassos e passo adaptativo.
@@ -178,5 +183,5 @@ while True:
 
 ## Observações
 
-- As versões em `desenvolvimento/` (`IC2_RK3_all.py`, `E1_MPI.py`) foram editadas depois do relatório: `IC2_RK3_all.py`, por exemplo, usa `M_H2O` no lugar de `M_NaCl` no cálculo de Φ_s e chega a massas finais um pouco diferentes (7.957652476067248e-12 no ECONTROL a 500 µm). Os números do relatório são os dos scripts da raiz de `codigos/`.
+- As versões em `desenvolvimento/` (`IC2_RK3_all.py`, `E1_MPI.py`) foram editadas depois do relatório e são intermediárias: `IC2_RK3_all.py` já calcula Φ_s com `M_H2O`, como o TCC, mas mantém os parâmetros ambientais da IC2. Por isso chega a massas finais um pouco diferentes (7.957652476067248e-12 no ECONTROL a 500 µm). Os números do relatório são os dos scripts da raiz de `codigos/`; os parâmetros corretos são os de `referencia_tcc/`.
 - Vários scripts de `desenvolvimento/` importam `from GRAFICO.DGH import ...`; a pasta `codigos/GRAFICO/DGH/` é uma cópia de `DGH/` para que eles funcionem sem alteração.

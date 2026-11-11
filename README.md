@@ -20,6 +20,8 @@ ic1/  e  ic2/
 
 Cada pasta `codigos/` é independente: os módulos ficam ao lado dos scripts, então basta entrar na pasta e rodar.
 
+> **Parâmetros de referência.** Os códigos das ICs estão como foram usados nos relatórios. A versão com os parâmetros corretos (T_ar = 18 °C, T_mar = 293,15 K, T_gota = 19,8 °C, umidade relativa f = 0,9 e Φ_s com `M_H2O`) é a do TCC. Os códigos do TCC equivalentes aos experimentos da IC2 estão em [`ic2/referencia_tcc/`](ic2/referencia_tcc/); o TCC completo está em [emanuelpintosampaio/TCC](https://github.com/emanuelpintosampaio/TCC).
+
 ## Como rodar
 
 Requisitos: Python 3 com `numpy` e `matplotlib`.

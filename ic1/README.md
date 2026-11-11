@@ -21,6 +21,8 @@ Só a massa de CO₂ m(t) é integrada numericamente, pelo método de **Euler im
 
 As simulações do relatório usam H_s = 6 m e r_i = 30, 100, 250 e 500 µm.
 
+**Parâmetros:** os scripts principais (`main_code.py`, `2)-EULER_IMPLICITO(BACKWARD)_SIMPLIFICAÇÕES.py`) estão como foram usados no relatório, com T_ar = 290 K, T_mar = 285 K, f = 0,8 e Φ_s calculado com `M_NaCl`. A versão de referência, com os parâmetros corretos (T_ar = 18 °C, T_mar = 293,15 K, T_gota = 19,8 °C, f = 0,9 e Φ_s com `M_H2O`), é a do TCC: veja [`../ic2/referencia_tcc/`](../ic2/referencia_tcc/) e o repositório [emanuelpintosampaio/TCC](https://github.com/emanuelpintosampaio/TCC).
+
 ## Pastas
 
 - `relatorio/`: relatório final em PDF.
