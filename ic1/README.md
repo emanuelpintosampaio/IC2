@@ -47,7 +47,7 @@ Os PDFs originais estão em [`figuras_relatorio/`](figuras_relatorio/), junto co
 |---|---|---|
 | `main_code.py` | 4.3 e 4.4 | Menu com os experimentos: 1 = E-RT, 2 = E-R, 3 = E-T (Euler Backward) e 4 = E-CONTROL (EDO com r e T constantes) |
 | `2)-EULER_IMPLICITO(BACKWARD)_SIMPLIFICAÇÕES.py` | 4.3 e 4.4 | Roda os quatro experimentos por Euler Backward e imprime a massa final de cada um |
-| `IC1_GRAFICOS.py` | 4.4, Figura 3 | Gráfico com os quatro experimentos (E-RT, E-T, E-R e E-CONTROL) juntos, no formato da Figura 3. Esta versão integra com RK4 e usa os parâmetros do TCC; precisa do `rk4.py`, que foi perdido (ver Observações) |
+| `IC1_GRAFICOS.py` | 4.4, Figura 3 | Gráfico com os quatro experimentos (E-RT, E-T, E-R e E-CONTROL) juntos, no formato da Figura 3, integrados pelo método de Euler (r_i = 30 µm, Δt = 10⁻³ s). Usa os parâmetros do TCC (T_a = 18 °C, T_mar = 293,15 K, f = 0,9) |
 | `GRAFICO/graph_metd_euler.py` | 4.3 e 4.4 | E-RT, E-R e E-T por Euler Backward com as constantes já calculadas (r_eq, τ_r, T_eq, τ_T), com gráficos de m(t), r(t) e T(t) |
 | `euler_backward_r.py` | 4.3 | Primeiro teste do Euler Backward com r(t) variando |
 | `edo_fator_integrante.py` | Eqs. 36 a 45 | Solução analítica com r e T constantes (fator integrante) |
@@ -65,6 +65,7 @@ python tau_f.py                                             # τ_f (menos de 1 s
 python "2)-EULER_IMPLICITO(BACKWARD)_SIMPLIFICAÇÕES.py"     # os quatro experimentos
 python main_code.py                                         # menu interativo
 python GRAFICO/graph_metd_euler.py                          # menu interativo com gráficos
+python IC1_GRAFICOS.py                                      # gráfico dos quatro experimentos
 ```
 
 ## Observações
@@ -79,6 +80,5 @@ python GRAFICO/graph_metd_euler.py                          # menu interativo co
   | 500 µm | 7,926e-12 ✓ | 7,927e-12 ✓ | 8,004e-12 ✓ | 8,006e-12 (8,001e-12) |
 
   No arquivo o passo está em Δt = 10⁻² s (`dts_test`); para 500 µm, cujo τ_f é de 0,72 s, esse passo é grosso e os valores se afastam um pouco mais.
-- `IC1_GRAFICOS.py` faz `from rk4 import metodo_rk4`, mas o `rk4.py` não existe mais (só sobrou o bytecode compilado), então ele não roda como está.
 - `graph_req.py` usa `text.usetex` e precisa de LaTeX instalado.
 - Os scripts importam `from GRAFICO.DGH import ...`; a pasta `GRAFICO/DGH/` é uma cópia de `DGH/` para que eles funcionem sem alteração.
