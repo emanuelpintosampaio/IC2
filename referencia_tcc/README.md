@@ -39,7 +39,7 @@ Conferência: usando o `SCONTROL_30.py` e o `SCONTROL_500.py` como referência, 
 ## Como rodar
 
 ```bash
-cd ic2/referencia_tcc
+cd referencia_tcc
 python SCONTROL_500.py      # grava SCONTROL_500.png
 python S1.py                # abre o gráfico na tela
 ```

@@ -3,8 +3,7 @@ __pycache__/
 *.pyc
 
 # Saídas gravadas pelos scripts na pasta de onde são executados
-/ic1/codigos/*.png
-/ic2/codigos/*.png
-/ic2/codigos/*.pdf
-/ic2/codigos/resultados_mpi.txt
-/ic2/referencia_tcc/*.png
+/codigos/*.png
+/codigos/*.pdf
+/codigos/resultados_mpi.txt
+/referencia_tcc/*.png
